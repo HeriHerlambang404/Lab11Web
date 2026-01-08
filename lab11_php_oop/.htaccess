@@ -1,0 +1,11 @@
+RewriteEngine On
+
+# Sesuaikan dengan nama folder project kamu di htdocs
+RewriteBase /lab11_php_oop/
+
+# Jika file atau folder aslinya ada, jangan di-rewrite (biar CSS/JS/Gambar tetap bisa dibuka)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Arahkan semua request ke index.php
+RewriteRule ^(.*)$ index.php/$1 [L]
